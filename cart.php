@@ -926,7 +926,7 @@ if (!function_exists('currency_format')) {
         <div class="chat__mini_main">
             <div class="chat_mini_content">
                 <i class="fa-duotone fa-square-arrow-up"></i>
-                <a class="chat_mini_content-icon-a">Chat</a>
+                <a class="chat_mini_content-icon-a">Chats</a>
             </div>
         </div>
     </div>
