@@ -53,7 +53,7 @@ session_start();
     </style>
 </head>
 
-<body style="visibility: visible;" onkeydown="return false">
+<body style="visibility: visible;">
     <div id="main">
         <style id="nebula-style">
             :root {
