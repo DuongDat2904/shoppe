@@ -2149,5 +2149,55 @@ if (!function_exists('currency_format')) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./acsset/Css/main.js"></script>
 <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    //chống click chuột phải
+
+var message = "NoRightClicking";
+
+function defeatIE() {
+    if (document.all) {
+        (message);
+        return false;
+    }
+}
+
+function defeatNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            (message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = defeatNS;
+} else {
+    document.onmouseup = defeatNS;
+    document.oncontextmenu = defeatIE;
+}
+document.oncontextmenu = new Function("return false")
+
+// chống ctrl + U
+document.onkeydown = function(e) {
+    if (e.ctrlKey &&
+        (e.keyCode === 67 ||
+            e.keyCode === 86 ||
+            e.keyCode === 85 ||
+            e.keyCode === 117)) {
+        return false;
+    } else {
+        return true;
+    }
+};
+$(document).keypress("u", function(e) {
+    if (e.ctrlKey) {
+        return false;
+    } else {
+        return true;
+    }
+});
+</script>
 
 </html>
