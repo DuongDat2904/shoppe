@@ -317,12 +317,13 @@ $user = (isset($_SESSION["user"])) ? $_SESSION["user"] : [];
                                 else if($tn=='doimk'){
                                     include("page/doimk.php");
                                 }
-                                else if($tn=='donhang'){
+                                else if($tn=='donmua'){
                                     include("page/donhang.php");
                                 }
                                 else{
                                     include("page/hoso.php");
                                 }
+                                
                                 ?>
                 </div>
             </div>

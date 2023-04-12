@@ -274,9 +274,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'shopee');
                         </div>
                     </div>
                 </div>
-                <?php 
-       include("footer2.php");
-       ?>
+                <?php
+                include("footer2.php");
+                ?>
             </div>
             <div></div>
             <div class="u+rzIW" id="BackgroundImagePortalAnchor"></div>

@@ -40,6 +40,11 @@ if (!function_exists('currency_format')) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
 <body>
     <div class="web">
         <header>
@@ -47,15 +52,15 @@ if (!function_exists('currency_format')) {
                 <div class="header_app">
                     <div class="header_app-left">
                         <ul class="header_app-left-ul">
-                            <li class="header_app-left-li"><a onclick="launch_toast()" class="flex _2TLLZP ZUq1cc">Kênh người bán</a>
+                            <li class="header_app-left-li"><a  class="flex _2TLLZP ZUq1cc error">Kênh người bán</a>
                             </li>
-                            <li class="header_app-left-li"><a onclick="launch_toast()">Trở thành người bàn Shopee</a></li>
-                            <li class="header_app-left-li header_app-left-li-lv1"><a href="" class="_2TLLZP">Tải ứng
+                            <li class="header_app-left-li"><a class="error">Trở thành người bàn Shopee</a></li>
+                            <li class="header_app-left-li header_app-left-li-lv1"><a href="" class="_2TLLZP error">Tải ứng
                                     dụng</a>
                                 <ul class="header_app-QR">
                                     <li class="header_app-QR-li">
                                         <div class="header_app-QR-img">
-                                            <a onclick="launch_toast()">
+                                            <a >
                                                 <img src="./acsset/img/img-logo/QR-app.png" alt="">
                                             </a>
                                         </div>
@@ -87,7 +92,7 @@ if (!function_exists('currency_format')) {
                                 </div>
                             </li>
                             <li class="header_ringht_login-li">
-                                <a href="">
+                                <a class="error">
                                     <svg height="16" viewBox="0 0 16 16" width="16" class="shopee-svg-icon icon-help-center">
                                         <g fill="none" fill-rule="evenodd" transform="translate(1)">
                                             <circle cx="7" cy="8" r="7" stroke="currentColor"></circle>
@@ -96,7 +101,7 @@ if (!function_exists('currency_format')) {
                                         </g>
                                     </svg> Hỗ trợ</a>
                             </li>
-                            <li class="header_ringht_login-li"><a onclick="launch_toast()"><svg padding-right="5px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <li class="header_ringht_login-li"><a class="error"><svg padding-right="5px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.00065 14.6667C11.6825 14.6667 14.6673 11.6819 14.6673 8.00004C14.6673 4.31814 11.6825 1.33337 8.00065 1.33337C4.31875 1.33337 1.33398 4.31814 1.33398 8.00004C1.33398 11.6819 4.31875 14.6667 8.00065 14.6667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                                         <path d="M5.33464 8.00004C5.33464 11.6819 6.52854 14.6667 8.0013 14.6667C9.47406 14.6667 10.668 11.6819 10.668 8.00004C10.668 4.31814 9.47406 1.33337 8.0013 1.33337C6.52854 1.33337 5.33464 4.31814 5.33464 8.00004Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
                                         <path d="M1.33398 8H14.6673" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -397,7 +402,7 @@ if (!function_exists('currency_format')) {
                     </div>
                     <div class="content_web5_main_sline">
                         <div class="content_web5_main_sline-left">
-                            <div class="web5_main_sline sliner3" onclick="launch_toast()">
+                            <div class="web5_main_sline sliner3 error">
                                 <ul class="web5_main_sline-list sliner-main3">
                                     <li class="web5_main_sline-item sliner-item3">
                                         <div class="web5_main_sline_CT">
@@ -408,7 +413,7 @@ if (!function_exists('currency_format')) {
                                     $result = mysqli_query($conn, "Select * from sliner_show where vitri='2' and anh_sline!='1.jpg'");
                                     while ($row = mysqli_fetch_array($result)) {
                                     ?>
-                                        <li class="web5_main_sline-item sliner-item3" onclick="launch_toast()">
+                                        <li class="web5_main_sline-item sliner-item3 error" >
                                             <div class="web5_main_sline_CT">
                                                 <a><img src="./acsset/img/content-web5/sline5/<?php echo $row['anh_sline'] ?>" alt=""></a>
                                             </div>
@@ -433,7 +438,7 @@ if (!function_exists('currency_format')) {
                         </div>
                         <div class="content_web5_main_sline-right sliner5">
                             <div class="web__main_sline_CT ">
-                                <ul class="web5__main_sline-list sliner-main5" onclick="launch_toast()">
+                                <ul class="web5__main_sline-list sliner-main5 error" >
                                     <li class="web5__main_sline-item ">
                                         <div class="web5__main_item-group">
                                             <div class="web5__main_grid">
@@ -613,7 +618,7 @@ if (!function_exists('currency_format')) {
                         $result = mysqli_query($conn, "Select * from product_show ");
                         while ($row = mysqli_fetch_array($result)) {
                         ?>
-                            <div class="content__web7_item" onclick="launch_toast()">
+                            <div class="content__web7_item error" >
                                 <a>
                                     <div class="content__web7_item-main">
                                         <div class="content__web7-main-img">
@@ -645,7 +650,7 @@ if (!function_exists('currency_format')) {
                         <?php } ?>
                     </div>
                     <div class="CTYAuL">
-                        <a class="btn btn-light btn--m btn--inline btn-light--link _23OYGN" data-testid="btn_light" onclick="launch_toast()">Xem thêm</a>
+                        <a class="btn btn-light btn--m btn--inline btn-light--link _23OYGN error" data-testid="btn_light" >Xem thêm</a>
                     </div>
                 </div>
             </div>
@@ -767,6 +772,15 @@ $(document).keypress("u", function(e) {
         return true;
     }
 });
+
+
+$(document).on('click', '.error', function(e) {
+        swal(
+            'Error!',
+            '<b style="color:red;">Đăng nhập để tiếp tục thao tác</b> !',
+            'error'
+        )
+    });
 </script>
 
 </html>

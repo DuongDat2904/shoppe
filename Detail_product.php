@@ -1708,7 +1708,7 @@ while ($row = mysqli_fetch_array($result)) {
                                             </div>
                                         </li>
                                         <li class="bl-item">
-                                            <p>Khi nhận và mở hàng tui cứ ngở đó là món hàng đẹp nhất tui từng thấy:))</p>
+                                            <p>Khi nhận và mở hàng tui cứ ngở đó là món hàng đẹp nhất tui từng thấy😘😘😘😘</p>
                                         </li>
                                         <li class="bl-item bl-img-item">
                                             <img src="./acsset/img/cmt/1.jpg" alt="">

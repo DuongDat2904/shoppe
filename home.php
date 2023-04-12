@@ -14,7 +14,8 @@ $user = (isset($_SESSION["user"])) ? $_SESSION["user"] : [];
  * @return    string
  */
 if (!function_exists('currency_format')) {
-    function currency_format($number, $suffix = '') {
+    function currency_format($number, $suffix = '')
+    {
         if (!empty($number)) {
             return number_format($number, 0, ',', '.') . "{$suffix}";
         }
@@ -78,6 +79,30 @@ if (!function_exists('currency_format')) {
             border: 1px solid;
             border-radius: 5px;
         }
+
+        .cart_menu_item1 h3 {
+            width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 25px;
+            -webkit-line-clamp: 1;
+            height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        .cart_as {
+            position: absolute;
+            top: 0;
+            right: 18px;
+            font-size: 14px;
+            background: white;
+            height: 20px;
+            width: 20px;
+            border-radius: 8px;
+            color: black;
+            text-align: center;
+        }
     </style>
 
 <body>
@@ -114,7 +139,7 @@ if (!function_exists('currency_format')) {
                                     báo</a>
                                 <div class="header_right_lv2">
                                     <div class="header_ringht-lv2-main">
-                                        
+
                                     </div>
                                     <div class="header_right-TBDN">
                                         <div class="header_right-lv2-DK">
@@ -168,29 +193,29 @@ if (!function_exists('currency_format')) {
                     <div class="header_search_cart">
                         <a href="./cart.php" class="header_search_cart-a">
                             <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                            <div class="cart_as">1</div>
+
                         </a>
                         <div class="_1EQVMQ">
                             <div class="HLWGuL">
                                 <div class="cart__menu">
                                     <ul class="cart__menu_list">
-                                        <li class="cart__menu_item">
-                                            <div class="cart_menu_item1">
+                                        <?php
+                                        $user = $user['username'];
+                                        $result = mysqli_query($conn, "select * FROM cart INNER JOIN product_main on cart.ma_sanpham=product_main.ma_sanpham INNER JOIN product ON product.ma_sanpham=product_main.ma_sanpham WHERE cart.username='$user'");
+                                        while ($row = mysqli_fetch_array($result)) {
+                                        ?>
+                                            <li class="cart__menu_item">
+                                                <div class="cart_menu_item1">
+                                                    <img src="./acsset/img/product/product_main/<?php echo $row['anh1'] ?>" alt="">
+                                                    <h3><?php echo $row['ten_sanpham'] ?></h3>
+                                                    <p><sup>đ</sup><?php echo currency_format($row['gia_sale']) ?></p>
+                                                </div>
+                                            </li>
 
-                                                <img src="./acsset/img/product/1.jpg" alt="">
-                                                <h3>Tên sản phẩm</h3>
-                                                <p><sup>đ</sup>21.000</p>
-                                            </div>
-                                        </li>
-                                        <li class="cart__menu_item">
-                                            <div class="cart_menu_item1">
-
-                                                <img src="./acsset/img/product/1.jpg" alt="">
-                                                <h3>Tên sản phẩm</h3>
-                                                <p><sup>đ</sup>21.000</p>
-                                            </div>
-                                        </li>
+                                        <?php } ?>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -712,9 +737,9 @@ if (!function_exists('currency_format')) {
                 </div>
             </div>
         </div>
-       <?php 
-       include("footer.php");
-       ?>
+        <?php
+        include("footer.php");
+        ?>
     </div>
     <div id="myModal" class="modal sliner4">
         <div class="modal__overlay ">
@@ -784,50 +809,51 @@ if (!function_exists('currency_format')) {
 <script>
     //chống click chuột phải
 
-var message = "NoRightClicking";
+    var message = "NoRightClicking";
 
-function defeatIE() {
-    if (document.all) {
-        (message);
-        return false;
-    }
-}
-
-function defeatNS(e) {
-    if (document.layers || (document.getElementById && !document.all)) {
-        if (e.which == 2 || e.which == 3) {
+    function defeatIE() {
+        if (document.all) {
             (message);
             return false;
         }
     }
-}
-if (document.layers) {
-    document.captureEvents(Event.MOUSEDOWN);
-    document.onmousedown = defeatNS;
-} else {
-    document.onmouseup = defeatNS;
-    document.oncontextmenu = defeatIE;
-}
-document.oncontextmenu = new Function("return false")
 
-// chống ctrl + U
-document.onkeydown = function(e) {
-    if (e.ctrlKey &&
-        (e.keyCode === 67 ||
-            e.keyCode === 86 ||
-            e.keyCode === 85 ||
-            e.keyCode === 117)) {
-        return false;
-    } else {
-        return true;
+    function defeatNS(e) {
+        if (document.layers || (document.getElementById && !document.all)) {
+            if (e.which == 2 || e.which == 3) {
+                (message);
+                return false;
+            }
+        }
     }
-};
-$(document).keypress("u", function(e) {
-    if (e.ctrlKey) {
-        return false;
+    if (document.layers) {
+        document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown = defeatNS;
     } else {
-        return true;
+        document.onmouseup = defeatNS;
+        document.oncontextmenu = defeatIE;
     }
-});
+    document.oncontextmenu = new Function("return false")
+
+    // chống ctrl + U
+    document.onkeydown = function(e) {
+        if (e.ctrlKey &&
+            (e.keyCode === 67 ||
+                e.keyCode === 86 ||
+                e.keyCode === 85 ||
+                e.keyCode === 117)) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+    $(document).keypress("u", function(e) {
+        if (e.ctrlKey) {
+            return false;
+        } else {
+            return true;
+        }
+    });
 </script>
+
 </html>

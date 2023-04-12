@@ -546,6 +546,7 @@ if (!function_exists('currency_format')) {
             color: var(--color-white);
             margin-bottom: 40px;
         }
+
         ::selection {
             background-color: red;
         }
@@ -889,9 +890,9 @@ if (!function_exists('currency_format')) {
             </div>
 
         </div>
-        <?php 
-       include("footer2.php");
-       ?>
+        <?php
+        include("footer2.php");
+        ?>
     </div>
     <div class="chat_overlay chat open">
         <div class="chat_overlay_main">
