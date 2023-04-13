@@ -1,3 +1,14 @@
 {
-    "editor.defaultFormatter": "rifi2k.format-html-in-php"
+    "editor.defaultFormatter": "rifi2k.format-html-in-php",
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "prettier.vueIndentScriptAndStyle": true,
+    "prettier.resolveGlobalModules": true,
+    "prettier.requireConfig": true,
+    "prettier.bracketSameLine": true,
+    "php.format.rules.arrayInitializersAlignKeyValuePairs": true,
+    "php.format.rules.spaceBeforeParenthesesInArrowFunctions": true,
+    "php.format.rules.spaceWithinArrayInitilizersParens": true,
+    "php.format.rules.spaceWithinForeachParens": true,
+    "html.format.indentInnerHtml": true
 }
