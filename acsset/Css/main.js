@@ -122,26 +122,26 @@ window.addEventListener("load", function() {
 //load web 
 
 window.addEventListener("load", function() {
-        var modal = document.getElementById("myModal");
-        const sliner = document.querySelector(".sliner4");
-        const btn = document.querySelector(".button-close")
-        btn.addEventListener("click", function() {
-            clickbtn(1);
-        })
-
-        function clickbtn(direction) {
-            console.log(direction);
-            sliner.style = `display: none`;
-        }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    var modal = document.getElementById("myModal");
+    const sliner = document.querySelector(".sliner4");
+    const btn = document.querySelector(".button-close")
+    btn.addEventListener("click", function() {
+        clickbtn(1);
     })
-    //chat
-window.addEventListener("load", function() {
 
+    function clickbtn(direction) {
+        console.log(direction);
+        sliner.style = `display: none`;
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+})
+
+//chat
+window.addEventListener("load", function() {
     const chat = document.querySelector(".chat");
     const chatLock = document.querySelector(".chat-lock");
     const sliner1 = document.querySelector(".chat__mini");

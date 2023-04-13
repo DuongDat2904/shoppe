@@ -1203,7 +1203,7 @@ if (!function_exists('currency_format')) {
                     $sqdele = "delete  from cart where addcart='$madonhang'";
                     $result1 = mysqli_query($conn, $sqdele);
                     echo '<script language="javascript"> alert("Các đơn hàng đặt thành công, sản phẩm sẽ được xóa trong giỏ hàng !");</script>';
-                    echo '<script language="javascript"> alert("Đơn hàng đã được đặt , đang chờ được xác nhận !");window.location="user_main.php"</script>';
+                    echo '<script language="javascript"> alert("Đơn hàng đã được đặt , đang chờ được xác nhận !");window.location="home.php"</script>';
                 }
             }
             ?>

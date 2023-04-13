@@ -1177,7 +1177,7 @@ if (!function_exists('currency_format')) {
                 $oder=uniqid();
                 $sqloder="insert into oder values ('$oder','$user','$masp','$color','$sl','$tong','Đơn hàng đã được đặt')";
                 $result = mysqli_query($conn, $sqloder);
-                echo '<script language="javascript"> alert("Đơn hàng đã được đặt , đang chờ được xác nhận !");window.location="user_main.php"</script>';
+                echo '<script language="javascript"> alert("Đơn hàng đã được đặt , đang chờ được xác nhận !");window.location="home.php"</script>';
             }
             ?>
         </div>
