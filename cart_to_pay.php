@@ -837,7 +837,6 @@ if (!function_exists('currency_format')) {
         ::selection {
             background-color: red;
         }
-        
     </style>
 </head>
 
@@ -976,7 +975,7 @@ if (!function_exists('currency_format')) {
                                     </ul>
                                 </div>
                                 <?php
-                                $tongphi=0;
+                                $tongphi = 0;
                                 $tong = 0;
                                 foreach ($ArrayCart as $lang) {
                                     $result = mysqli_query($conn, "select * FROM `cart` INNER JOIN product_main ON product_main.ma_sanpham=cart.ma_sanpham INNER JOIN product ON product.ma_sanpham=cart.ma_sanpham WHERE cart.addcart='$lang' and cart.username='$user'");
@@ -1099,7 +1098,7 @@ if (!function_exists('currency_format')) {
                                                                             $tong1 =  $row['thanhtien'] + $phi;
                                                                             echo currency_format($tong1);
                                                                             $tong += $tong1;
-                                                                            $tongphi+=$phi;
+                                                                            $tongphi += $phi;
                                                                             ?></div>
                                                 </div>
                                             </div>
@@ -1164,13 +1163,13 @@ if (!function_exists('currency_format')) {
                             <div class="KQyCj0">
                                 <div class="Tc17Ac XIEGGF BcITa9">Tổng tiền hàng</div>
                                 <div class="Tc17Ac mCEcIy BcITa9"><?php
-                                                                        $tongtruphi=$tong-$tongphi;
+                                                                    $tongtruphi = $tong - $tongphi;
                                                                     echo currency_format($tongtruphi)  ?></div>
                                 <div class="Tc17Ac XIEGGF RY9Grr">Phí vận chuyển</div>
                                 <div class="Tc17Ac mCEcIy RY9Grr"><?php echo currency_format($tongphi) ?></div>
                                 <div class="Tc17Ac XIEGGF n3vdfL">Tổng thanh toán:</div>
                                 <div class="Tc17Ac kC0GSn mCEcIy n3vdfL"><?php
-                                                                            $tongcophi=$tongtruphi+$tongphi;
+                                                                            $tongcophi = $tongtruphi + $tongphi;
                                                                             echo currency_format($tongcophi)
                                                                             ?></div>
                                 <div class="uTFqRt">
@@ -1186,9 +1185,9 @@ if (!function_exists('currency_format')) {
             </form>
         </div>
 
-        <?php 
-       include("footer2.php");
-       ?>
+        <?php
+        include("footer2.php");
+        ?>
     </div>
     <div class="chat_overlay chat open">
         <div class="chat_overlay_main">
