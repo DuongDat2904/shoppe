@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 05, 2023 lúc 05:16 AM
+-- Thời gian đã tạo: Th4 13, 2023 lúc 05:21 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -121,9 +121,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`addcart`, `username`, `ma_sanpham`, `phanloai`, `soluong`, `thanhtien`) VALUES
-('6417bb534399c', 'duongdat', 'SP01', 'Trắng,M', '1', '111000'),
-('641abe3d66ca2', 'duongdat', 'SP02', 'Xám,XL', '2', '180000'),
-('642bd036cd9b0', 'duongdat', 'SP02', 'Trắng,M', '5', '450000');
+('64376b9627493', 'duongdat', 'SP01', 'Trắng,M', '1', '111000');
 
 -- --------------------------------------------------------
 
@@ -198,6 +196,29 @@ INSERT INTO `function` (`MaCN`, `TenCN`, `AnhCN`) VALUES
 ('HH', 'Hàng hiệu giá tốt', '8.png'),
 ('KX', 'Chia kho xu 30 triệu', '9.png'),
 ('HQT', 'Hàng quốc tế', '10.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `oder`
+--
+
+CREATE TABLE `oder` (
+  `id_oder` varchar(150) COLLATE utf8_vietnamese_ci NOT NULL,
+  `username` varchar(150) COLLATE utf8_vietnamese_ci NOT NULL,
+  `ma_sanpham` varchar(150) COLLATE utf8_vietnamese_ci NOT NULL,
+  `phanloai` varchar(150) COLLATE utf8_vietnamese_ci NOT NULL,
+  `soluong` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `thanhtien` varchar(150) COLLATE utf8_vietnamese_ci NOT NULL,
+  `trangthai` varchar(150) COLLATE utf8_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `oder`
+--
+
+INSERT INTO `oder` (`id_oder`, `username`, `ma_sanpham`, `phanloai`, `soluong`, `thanhtien`, `trangthai`) VALUES
+('64376cfd53ee2', 'duongdat', 'SP01', 'Trắng', '2', '254700', 'Đơn hàng đã được đặt');
 
 -- --------------------------------------------------------
 
