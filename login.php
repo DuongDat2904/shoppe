@@ -304,7 +304,7 @@ session_start();
     if (isset($_POST['login'])) {
         $user = $_POST['loginKey'];
         $pass = $_POST['password'];
-        $sql = "select * from user where username='$user' and password=MD5('$pass')";
+        $sql = "select * from user where username='$user' and password=MD5('$pass') and user_rank='KH'";
         $result = mysqli_query($conn, $sql);
         $sison = mysqli_fetch_assoc($result);
         if (!$user || !$pass) {
@@ -315,7 +315,7 @@ session_start();
             $_SESSION['user'] = $sison;
             echo '<script language="javascript"> alert("đăng nhập thành công");window.location="home.php"</script>';
         } else {
-            echo '<script language="javascript"> alert("đăng nhập thất thất bại");window.location="login.php"</script>';
+            echo '<script language="javascript"> alert("đăng nhập thất thất bại, thông tin tài khoản không chính xác hoặc tài khoản không có quyền đăng nhập");window.location="login.php"</script>';
         }
     }
     ?>
