@@ -1454,14 +1454,14 @@ while ($row = mysqli_fetch_array($result)) {
                         <?php
                         if (isset($_POST['themGH'])) {
                             $order_id = uniqid();
-                            $tk = $user['username'];
+                            $user = $user['username'];
                             $color = $_POST['color'];
                             $size = $_POST['size'];
                             $sl = $_POST['sluong'];
                             $dongia=$row['gia_sale'];
                             $thanhtien=$sl*$dongia;
-                            $_SESSION['user']=$tk;
-                            $sql = "insert into cart values ('$order_id','$tk','$ma','$color,$size','$sl','$thanhtien')";
+                            $_SESSION['user']=$user;
+                            $sql = "insert into cart values ('$order_id','$user','$ma','$color,$size','$sl','$thanhtien')";
                             $result = mysqli_query($conn, $sql);
                             echo '<script language="javascript"> alert("Thêm giỏ hàng thành công, bạn được chuyển đến trang giỏ hàng");window.location="cart.php"</script>';
                         } elseif (isset($_POST['muangay'])) {

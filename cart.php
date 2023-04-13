@@ -888,7 +888,6 @@ if (!function_exists('currency_format')) {
 
                 </div>
             </div>
-
         </div>
         <?php
         include("footer2.php");

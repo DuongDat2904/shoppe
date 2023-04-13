@@ -1183,6 +1183,30 @@ if (!function_exists('currency_format')) {
                     </div>
                 </div>
             </form>
+            <?php
+            if (isset($_POST['dathang'])) {
+                foreach ($ArrayCart as $lang) {
+                    $result = mysqli_query($conn, "select * FROM cart INNER JOIN product_main ON product_main.ma_sanpham=cart.ma_sanpham INNER JOIN product ON product.ma_sanpham=cart.ma_sanpham WHERE cart.addcart='$lang' and cart.username='$user'");
+                    while ($row = mysqli_fetch_array($result)) {
+                        $madonhang=$row['addcart'];
+                        $masp = $row['ma_sanpham'];
+                        $phanloai = $row['phanloai'];
+                        $sl = $row['soluong'];
+                        $thanhtien = $row['thanhtien'];
+                        $phi = 32000;
+                        $tong = 0;
+                        $tong = $thanhtien + $phi;
+                        $oder = uniqid();
+                    }
+                    $sqlod = "insert into oder values('$oder','$user','$masp','$phanloai','$sl','$tong','Đơn hàng đã được đặt')";
+                    $result = mysqli_query($conn, $sqlod);
+                    $sqdele = "delete  from cart where addcart='$madonhang'";
+                    $result1 = mysqli_query($conn, $sqdele);
+                    echo '<script language="javascript"> alert("Các đơn hàng đặt thành công, sản phẩm sẽ được xóa trong giỏ hàng !");</script>';
+                    echo '<script language="javascript"> alert("Đơn hàng đã được đặt , đang chờ được xác nhận !");window.location="user_main.php"</script>';
+                }
+            }
+            ?>
         </div>
 
         <?php

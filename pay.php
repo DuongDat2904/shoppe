@@ -1166,11 +1166,25 @@ if (!function_exists('currency_format')) {
                     </div>
                 </div>
             </form>
+            <?php
+            if (isset($_POST['dathang'])) {
+                $result = mysqli_query($conn, "select * FROM product_main INNER JOIN product ON product_main.ma_sanpham=product.ma_sanpham WHERE product_main.ma_sanpham='$masp';");
+                $row = mysqli_fetch_array($result);
+                $masp = $row['ma_sanpham'];
+                $gia = $row['gia_sale'];
+                $phi = 32700;
+                $tong = ($gia * $sl) + $phi;
+                $oder=uniqid();
+                $sqloder="insert into oder values ('$oder','$user','$masp','$color','$sl','$tong','Đơn hàng đã được đặt')";
+                $result = mysqli_query($conn, $sqloder);
+                echo '<script language="javascript"> alert("Đơn hàng đã được đặt , đang chờ được xác nhận !");window.location="user_main.php"</script>';
+            }
+            ?>
         </div>
 
-        <?php 
-       include("footer2.php");
-       ?>
+        <?php
+        include("footer2.php");
+        ?>
     </div>
     <div class="chat_overlay chat open">
         <div class="chat_overlay_main">
