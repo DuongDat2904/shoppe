@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 13, 2023 lúc 05:21 AM
+-- Thời gian đã tạo: Th4 13, 2023 lúc 06:08 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 8.1.10
 
@@ -218,7 +218,19 @@ CREATE TABLE `oder` (
 --
 
 INSERT INTO `oder` (`id_oder`, `username`, `ma_sanpham`, `phanloai`, `soluong`, `thanhtien`, `trangthai`) VALUES
-('64376cfd53ee2', 'duongdat', 'SP01', 'Trắng', '2', '254700', 'Đơn hàng đã được đặt');
+('64376cfd53ee2', 'duongdat', 'SP01', 'Trắng', '2', '254700', 'Đơn hàng đã được đặt'),
+('6437756bb6376', 'duongdat', 'SP01', 'Trắng', '1', '143700', 'Đơn hàng đang giao đến bạn'),
+('6437759e6e64a', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Đơn hàng đang giao đến bạn'),
+('643775a0692a3', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Đơn hàng đang giao đến bạn'),
+('643775a305c2c', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Đơn hàng đang giao đến bạn'),
+('643775a464bbd', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Đơn hàng đang giao đến bạn'),
+('643775a69ac32', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Chờ thanh toán'),
+('643775a82dffc', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Chờ thanh toán'),
+('643775a96535a', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Đơn hàng đã đến kho phân loại 21-HNI Thanh Oai 2 SOC'),
+('643775ab4a001', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Hoàn thành'),
+('643775acc9cac', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Hoàn thành'),
+('643775ae6baf5', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Đã hủy'),
+('643775b69a67f', 'duongdat', 'SP01', 'Trắng', '3', '365700', 'Chờ đánh giá');
 
 -- --------------------------------------------------------
 
