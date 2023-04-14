@@ -13,7 +13,8 @@ $ma = $_GET['ma'];
  * @return    string
  */
 if (!function_exists('currency_format')) {
-    function currency_format($number, $suffix = '') {
+    function currency_format($number, $suffix = '')
+    {
         if (!empty($number)) {
             return number_format($number, 0, ',', '.') . "{$suffix}";
         }
@@ -1017,39 +1018,40 @@ while ($row = mysqli_fetch_array($result)) {
         font-weight: bold !important;
         margin: 20px 0 20px 20px;
     }
+
     .cart_menu_item1 img {
-            width: 50px;
-            height: 50px;
-        }
+        width: 50px;
+        height: 50px;
+    }
 
-        .cart_menu_item1 {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+    .cart_menu_item1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
-        .cart_menu_item1 p {
-            color: red !important;
-            font-size: 12px;
-            line-height: 30px;
-        }
+    .cart_menu_item1 p {
+        color: red !important;
+        font-size: 12px;
+        line-height: 30px;
+    }
 
-        .HLWGuL {
-            text-align: center;
-            padding: 3.75rem 1rem;
-        }
+    .HLWGuL {
+        text-align: center;
+        padding: 3.75rem 1rem;
+    }
 
-        .cart__menu a {
-            background: red;
-            font-size: 12px;
-            display: block;
-            width: 100px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            border: 1px solid;
-            border-radius: 5px;
-        }
+    .cart__menu a {
+        background: red;
+        font-size: 12px;
+        display: block;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: 1px solid;
+        border-radius: 5px;
+    }
 </style>
 
 
@@ -1146,7 +1148,7 @@ while ($row = mysqli_fetch_array($result)) {
 
                         <div class="_1EQVMQ">
                             <div class="HLWGuL">
-                            <div class="cart__menu">
+                                <div class="cart__menu">
                                     <ul class="cart__menu_list">
                                         <li class="cart__menu_item">
                                             <div class="cart_menu_item1">
@@ -1165,7 +1167,7 @@ while ($row = mysqli_fetch_array($result)) {
                                             </div>
                                         </li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -1458,9 +1460,9 @@ while ($row = mysqli_fetch_array($result)) {
                             $color = $_POST['color'];
                             $size = $_POST['size'];
                             $sl = $_POST['sluong'];
-                            $dongia=$row['gia_sale'];
-                            $thanhtien=$sl*$dongia;
-                            $_SESSION['user']=$user;
+                            $dongia = $row['gia_sale'];
+                            $thanhtien = $sl * $dongia;
+                            $_SESSION['user'] = $user;
                             $sql = "insert into cart values ('$order_id','$user','$ma','$color,$size','$sl','$thanhtien')";
                             $result = mysqli_query($conn, $sql);
                             echo '<script language="javascript"> alert("Thêm giỏ hàng thành công, bạn được chuyển đến trang giỏ hàng");window.location="cart.php"</script>';
@@ -1469,11 +1471,11 @@ while ($row = mysqli_fetch_array($result)) {
                             $color = $_POST['color'];
                             $size = $_POST['size'];
                             $sl = $_POST['sluong'];
-                            $_SESSION['masp']=$ma;
-                            $_SESSION['color']=$color;
-                            $_SESSION['size']=$size;
-                            $_SESSION['sl']=$sl;
-                            $_SESSION['user']=$tk;
+                            $_SESSION['masp'] = $ma;
+                            $_SESSION['color'] = $color;
+                            $_SESSION['size'] = $size;
+                            $_SESSION['sl'] = $sl;
+                            $_SESSION['user'] = $tk;
                             echo '<script language="javascript"> alert("Bạn được chuyển đến trang thanh toán");window.location="pay.php"</script>';
                         }
                         ?>
@@ -2836,9 +2838,9 @@ while ($row = mysqli_fetch_array($result)) {
 
             </div>
         </div>
-        <?php 
-       include("footer.php");
-       ?>
+        <?php
+        include("footer.php");
+        ?>
     </div>
 
     <div class="chat_overlay chat open">
@@ -2898,20 +2900,20 @@ while ($row = mysqli_fetch_array($result)) {
     }
     let handlePlus = () => {
         amount++;
+        console.log(amount);
         rander(amount);
-
     }
     let handleMinus = () => {
         if (amount > 1) {
+            console.log(amount);
             amount--;
         }
         rander(amount);
-
-
     }
     amountElement.addEventListener('input', () => {
         amount = amountElement.value;
         amount = parseInt(isNaN(amount) || amount == 0) ? 1 : amount;
+        console.log(amount);
         rander(amount);
     })
 
