@@ -182,7 +182,7 @@ $row = mysqli_fetch_array($result)
             $anh = $_FILES["file"]['name'];
             $ad = $_FILES["file"]['tmp_name'];
             move_uploaded_file($ad, "./acsset/img/avartar/$anh");
-            if (empty($hoten) || empty($email) || empty($sdt) || empty($ns)|| empty($anh)) {
+            if (empty($hoten) || empty($email) || empty($sdt) || empty($ns)) {
                 echo '<script language="javascript" > alert("Bạn nhập thiếu dữ liệu"); window.location="user_main.php?bien=hoso";</script>';
                 exit();
             }

@@ -262,10 +262,11 @@ $conn = mysqli_connect('localhost', 'root', '', 'shopee');
                                 }
                                 if (mysqli_num_rows($result) > 0) {
                                     echo '<script language="javascript"> alert("tài khoản đã tồn tại");</script>';
+                                    exit;
                                 } else {
                                     $sql = "insert into user values ('$user',MD5('$pass'),'KH')";
                                     $result = mysqli_query($conn, $sql);
-                                    $sql1 = "insert into user_main values ('$user','','','','khac','','avatar.png')";
+                                    $sql1 = "insert into user_main values ('$user','','','','','avatar.png')";
                                     $result = mysqli_query($conn, $sql1);
                                     echo '<script language="javascript"> alert("đăng Kí thành công, mời bạn đăng nhập");window.location="login.php"</script>';
                                 }
