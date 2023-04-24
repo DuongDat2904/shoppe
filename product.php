@@ -124,6 +124,16 @@ if (!function_exists('currency_format')) {
             font-size: 12px;
             line-height: 30px;
         }
+        .cart_menu_item1 h3 {
+            width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 25px;
+            -webkit-line-clamp: 1;
+            height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
 
         .HLWGuL {
             text-align: center;
@@ -238,22 +248,20 @@ if (!function_exists('currency_format')) {
                             <div class="HLWGuL">
                                 <div class="cart__menu">
                                     <ul class="cart__menu_list">
-                                        <li class="cart__menu_item">
-                                            <div class="cart_menu_item1">
+                                    <?php
+                                        $user = $user['username'];
+                                        $result = mysqli_query($conn, "select * FROM cart INNER JOIN product_main on cart.ma_sanpham=product_main.ma_sanpham INNER JOIN product ON product.ma_sanpham=product_main.ma_sanpham WHERE cart.username='$user'");
+                                        while ($row = mysqli_fetch_array($result)) {
+                                        ?>
+                                            <li class="cart__menu_item">
+                                                <div class="cart_menu_item1">
+                                                    <img src="./acsset/img/product/product_main/<?php echo $row['anh1'] ?>" alt="">
+                                                    <h3><?php echo $row['ten_sanpham'] ?></h3>
+                                                    <p><sup>đ</sup><?php echo currency_format($row['gia_sale']) ?></p>
+                                                </div>
+                                            </li>
 
-                                                <img src="./acsset/img/product/1.jpg" alt="">
-                                                <h3>Tên sản phẩm</h3>
-                                                <p><sup>đ</sup>21.000</p>
-                                            </div>
-                                        </li>
-                                        <li class="cart__menu_item">
-                                            <div class="cart_menu_item1">
-
-                                                <img src="./acsset/img/product/1.jpg" alt="">
-                                                <h3>Tên sản phẩm</h3>
-                                                <p><sup>đ</sup>21.000</p>
-                                            </div>
-                                        </li>
+                                        <?php } ?>
                                     </ul>
                                     
                                 </div>

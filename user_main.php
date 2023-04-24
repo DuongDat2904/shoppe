@@ -114,6 +114,16 @@ $user = (isset($_SESSION["user"])) ? $_SESSION["user"] : [];
             font-size: 12px;
             line-height: 30px;
         }
+        .cart_menu_item1 h3 {
+            width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 25px;
+            -webkit-line-clamp: 1;
+            height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
 
         .HLWGuL {
             text-align: center;
@@ -227,21 +237,7 @@ $user = (isset($_SESSION["user"])) ? $_SESSION["user"] : [];
                             <div class="HLWGuL">
                             <div class="cart__menu">
                                     <ul class="cart__menu_list">
-                                        <li class="cart__menu_item">
-                                            <div class="cart_menu_item1">
-                                                <img src="./acsset/img/product/1.jpg" alt="">
-                                                <h3>Tên sản phẩm</h3>
-                                                <p><sup>đ</sup>21.000</p>
-                                            </div>
-                                        </li>
-                                        <li class="cart__menu_item">
-                                            <div class="cart_menu_item1">
-
-                                                <img src="./acsset/img/product/1.jpg" alt="">
-                                                <h3>Tên sản phẩm</h3>
-                                                <p><sup>đ</sup>21.000</p>
-                                            </div>
-                                        </li>
+                                    
                                     </ul>
                                     
                                 </div>

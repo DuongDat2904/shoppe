@@ -550,6 +550,15 @@ if (!function_exists('currency_format')) {
         ::selection {
             background-color: red;
         }
+
+        .cart_product2-aozia {
+            display: block;
+            color: red !important;
+        }
+
+        .cart_product2-aozia:hover {
+            color: black !important;
+        }
     </style>
 
 </head>
@@ -709,7 +718,7 @@ if (!function_exists('currency_format')) {
                                         <li class="cart_product2_item"><sup>đ</sup><?php echo currency_format($row['gia_sale']) ?></li>
                                         <li class="cart_product2_item"><?php echo $row['soluong'] ?></li>
                                         <li class="cart_product2_item cart_product_item_color"><sup>đ</sup><?php echo currency_format($row['thanhtien']) ?></li>
-                                        <li class="cart_product2_item">Xóa</li>
+                                        <li class="cart_product2_item"><a class="cart_product2-aozia" href="">Xóa</a></li>
                                     </ul>
                                 </div>
                             </div>

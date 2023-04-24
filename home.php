@@ -62,6 +62,16 @@ if (!function_exists('currency_format')) {
             font-size: 12px;
             line-height: 30px;
         }
+        .cart_menu_item1 h3 {
+            width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 25px;
+            -webkit-line-clamp: 1;
+            height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
 
         .HLWGuL {
             text-align: center;
@@ -80,16 +90,6 @@ if (!function_exists('currency_format')) {
             border-radius: 5px;
         }
 
-        .cart_menu_item1 h3 {
-            width: 500px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 25px;
-            -webkit-line-clamp: 1;
-            height: 30px;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-        }
 
         .cart_as {
             position: absolute;
